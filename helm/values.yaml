@@ -1,0 +1,26 @@
+alertmanager:
+  enabled: true
+
+  alertmanagerSpec:
+    useExistingSecret: false
+
+  config:
+    global:
+      resolve_timeout: 5m
+
+    route:
+      receiver: slack-notifications
+      group_wait: 10s
+      group_interval: 30s
+      repeat_interval: 1m
+
+    receivers:
+    - name: slack-notifications
+      slack_configs:
+      - api_url: 'REPLACE_WITH_SLACK_WEBHOOK'
+        channel: '#alerts'
+        send_resolved: true
+        title: 'Prometheus Alert'
+        text: |
+          Alert Name: {{ .CommonLabels.alertname }}
+          Severity: {{ .CommonLabels.severity }}

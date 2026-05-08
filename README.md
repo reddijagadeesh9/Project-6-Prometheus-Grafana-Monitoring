@@ -132,6 +132,7 @@ sudo mv /tmp/eksctl /usr/local/bin
 ```bash id="so4xqd"
 curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
 ```
+<img width="1557" height="340" alt="Screenshot 2026-05-07 171631" src="https://github.com/user-attachments/assets/bc49ca78-3865-4675-a577-30375002df64" />
 
 ---
 
@@ -372,8 +373,113 @@ Verified:
 * Slack notifications working
 
 ---
+Step 17 : Deploy Sample Monitoring Application
 
-# 📌 Step 17: Configure ServiceMonitor
+Created a sample Kubernetes application for monitoring demonstration.
+
+deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-app
+  template:
+    metadata:
+      labels:
+        app: demo-app
+    spec:
+      containers:
+      - name: demo-app
+        image: nginx
+        ports:
+        - containerPort: 80
+
+Apply:
+
+kubectl apply -f deployment.yaml
+
+Output:
+
+deployment.apps/demo-app created
+
+ Step 18 : Expose Application Service
+ 
+service.yaml
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-app-service
+  labels:
+    app: demo-app
+spec:
+  selector:
+    app: demo-app
+  ports:
+  - port: 80
+    targetPort: 80
+
+Apply:
+
+kubectl apply -f service.yaml
+
+Output:
+
+service/demo-app-service created
+
+📌 Step 19 : Configure ServiceMonitor
+
+Created ServiceMonitor resource so Prometheus can scrape application metrics automatically.
+
+servicemonitor.yaml
+
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: demo-app-monitor
+  labels:
+    release: monitoring
+spec:
+  selector:
+    matchLabels:
+      app: demo-app
+  endpoints:
+  - port: http
+    interval: 15s
+
+Apply:
+
+kubectl apply -f servicemonitor.yaml
+
+Output:
+
+servicemonitor.monitoring.coreos.com/demo-app-monitor created
+
+📌 Step 20: Verify Monitoring Pipeline
+
+Verified:
+
+Prometheus targets discovered
+Metrics collection successful
+Grafana dashboards displaying metrics
+Alerts firing correctly
+Slack notifications received
+
+📌 Monitoring Components Installed
+Component	Purpose
+Prometheus	Metrics collection
+Grafana	Dashboard visualization
+Alertmanager	Alert routing
+node-exporter	Node metrics
+kube-state-metrics	Kubernetes object metrics
+ServiceMonitor	Automatic service discovery
+
+# 📌 Step 21: Configure ServiceMonitor
 
 Created ServiceMonitor resource for Prometheus service discovery.
 
@@ -386,35 +492,8 @@ Configured:
 
 ---
 
-# 📌 Step 18: Deploy Sample Application
 
-## deployment.yaml
-
-Created Kubernetes deployment for testing monitoring stack.
-
-Apply:
-
-```bash id="th5xqw"
-kubectl apply -f deployment.yaml
-```
-
----
-
-# 📌 Step 19: Expose Application Service
-
-## service.yaml
-
-Created Kubernetes service.
-
-Apply:
-
-```bash id="ti6xqx"
-kubectl apply -f service.yaml
-```
-
----
-
-# 📌 Step 20: Verify Slack Alerts
+# 📌 Step 22: Verify Slack Alerts
 
 Verified:
 

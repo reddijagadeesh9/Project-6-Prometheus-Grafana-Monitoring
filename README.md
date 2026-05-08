@@ -646,15 +646,6 @@ Project-6-Prometheus-Grafana-Monitoring/
 
 ---
 
-# 📌 Challenges Faced
-
-| Challenge                     | Solution                               |
-| ----------------------------- | -------------------------------------- |
-| Alertmanager config issues    | Used direct secret-based configuration |
-| Slack webhook push protection | Removed secrets from Git history       |
-| Port forwarding from EC2      | Configured `--address 0.0.0.0`         |
-| PrometheusRule YAML issues    | Corrected rule formatting              |
-
 ---
 
 # 📌 Best Practices Followed

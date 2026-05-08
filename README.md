@@ -1,7 +1,7 @@
-
+````
 # Project 6: Monitoring and Alerting with Prometheus and Grafana
 
-#  Project Description
+# 📌 Project Description
 
 This project demonstrates the implementation of a complete Kubernetes observability and monitoring stack on AWS EKS using Prometheus, Grafana, Alertmanager, and kube-prometheus-stack.
 
@@ -11,7 +11,7 @@ This setup simulates a production-grade monitoring solution used in modern DevOp
 
 ---
 
-#  Technologies Used
+# 🚀 Technologies Used
 
 - AWS EKS
 - Kubernetes
@@ -29,9 +29,9 @@ This setup simulates a production-grade monitoring solution used in modern DevOp
 
 ---
 
-#  Project Architecture
+# 📌 Project Architecture
 
-
+```text
                         +----------------------+
                         |      Slack Alerts    |
                         |  (#alerts Channel)   |
@@ -59,7 +59,7 @@ This setup simulates a production-grade monitoring solution used in modern DevOp
 |  +------------------------------------------------------+  |
 |                                                             |
 +-------------------------------------------------------------+
-
+````
 
 ---
 

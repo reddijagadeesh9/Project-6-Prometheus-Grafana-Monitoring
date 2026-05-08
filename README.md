@@ -1,4 +1,4 @@
-````
+
 # Project 6: Monitoring and Alerting with Prometheus and Grafana
 
 # 📌 Project Description

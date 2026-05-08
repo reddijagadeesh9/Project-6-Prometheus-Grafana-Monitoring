@@ -172,6 +172,7 @@ eksctl create cluster \
 ```bash id="sr7xqg"
 kubectl get nodes
 ```
+<img width="1046" height="223" alt="Screenshot 2026-05-07 173054" src="https://github.com/user-attachments/assets/cfbd2200-0637-447c-ae9e-4b6cbd05def5" />
 
 Verified:
 
@@ -196,6 +197,7 @@ helm repo add prometheus-community https://prometheus-community.github.io/helm-c
 
 helm repo update
 ```
+<img width="1557" height="340" alt="Screenshot 2026-05-07 171631" src="https://github.com/user-attachments/assets/f8875a81-1eba-4c84-a82f-efca720952ea" />
 
 ---
 
@@ -221,6 +223,7 @@ helm install monitoring prometheus-community/kube-prometheus-stack \
 ```bash id="sv2xqk"
 kubectl get pods -n monitoring
 ```
+<img width="1068" height="241" alt="Screenshot 2026-05-07 201106" src="https://github.com/user-attachments/assets/79adba91-50ba-42c1-ac78-6e65843b7d68" />
 
 Verified:
 
@@ -244,6 +247,7 @@ Access:
 ```text id="sx4xqm"
 http://EC2_PUBLIC_IP:3000
 ```
+<img width="386" height="587" alt="Screenshot 2026-05-07 181658" src="https://github.com/user-attachments/assets/88a129d0-faf4-4ea7-a118-8f228d285232" />
 
 ---
 
@@ -258,6 +262,7 @@ Access:
 ```text id="sz6xqo"
 http://EC2_PUBLIC_IP:9090
 ```
+<img width="532" height="585" alt="Screenshot 2026-05-07 181705" src="https://github.com/user-attachments/assets/a598087b-2669-4c87-b31b-cdd5ec9d8162" />
 
 ---
 
@@ -274,6 +279,8 @@ Credentials:
 
 * Username: admin
 * Password: Retrieved from secret
+
+<img width="855" height="709" alt="Screenshot 2026-05-07 174013" src="https://github.com/user-attachments/assets/f43cacff-357f-4a06-aa79-31a4aae70e52" />
 
 ---
 
@@ -301,6 +308,7 @@ Apply:
 ```bash id="tc9xqr"
 kubectl apply -f alerts.yaml
 ```
+<img width="836" height="144" alt="Screenshot 2026-05-07 175516" src="https://github.com/user-attachments/assets/b22d101f-6bdb-40c5-a21f-45d298f5448d" />
 
 ---
 
@@ -373,6 +381,7 @@ Verified:
 * Slack notifications working
 
 ---
+---
 Step 17 : Deploy Sample Monitoring Application
 
 Created a sample Kubernetes application for monitoring demonstration.
@@ -398,7 +407,8 @@ spec:
         image: nginx
         ports:
         - containerPort: 80
-
+---
+---
 Apply:
 
 kubectl apply -f deployment.yaml
@@ -406,8 +416,9 @@ kubectl apply -f deployment.yaml
 Output:
 
 deployment.apps/demo-app created
-
- Step 18 : Expose Application Service
+---
+---
+#Step 18 : Expose Application Service
  
 service.yaml
 
@@ -423,15 +434,16 @@ spec:
   ports:
   - port: 80
     targetPort: 80
-
+---
 Apply:
-
+---
 kubectl apply -f service.yaml
-
+---
 Output:
-
+---
 service/demo-app-service created
-
+---
+---
 📌 Step 19 : Configure ServiceMonitor
 
 Created ServiceMonitor resource so Prometheus can scrape application metrics automatically.
@@ -451,15 +463,18 @@ spec:
   endpoints:
   - port: http
     interval: 15s
-
+---
 Apply:
-
+---
 kubectl apply -f servicemonitor.yaml
-
+---
 Output:
-
+---
 servicemonitor.monitoring.coreos.com/demo-app-monitor created
+---
+<img width="748" height="262" alt="Screenshot 2026-05-07 174622" src="https://github.com/user-attachments/assets/ce9aeec6-d8f2-486a-8327-d9ca8ccc79e5" />
 
+---
 📌 Step 20: Verify Monitoring Pipeline
 
 Verified:
@@ -469,7 +484,7 @@ Metrics collection successful
 Grafana dashboards displaying metrics
 Alerts firing correctly
 Slack notifications received
-
+---
 📌 Monitoring Components Installed
 Component	Purpose
 Prometheus	Metrics collection
@@ -478,13 +493,15 @@ Alertmanager	Alert routing
 node-exporter	Node metrics
 kube-state-metrics	Kubernetes object metrics
 ServiceMonitor	Automatic service discovery
-
+---
+---
 # 📌 Step 21: Configure ServiceMonitor
 
 Created ServiceMonitor resource for Prometheus service discovery.
+---
 
 ## servicemonitor.yaml
-
+---
 Configured:
 
 * Automatic metrics scraping

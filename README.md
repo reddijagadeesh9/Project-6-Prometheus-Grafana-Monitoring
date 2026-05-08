@@ -9,6 +9,8 @@ The goal of this project is to monitor Kubernetes infrastructure, visualize metr
 
 This setup simulates a production-grade monitoring solution used in modern DevOps and SRE environments.
 
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/572046b3-3993-4ad1-915a-255c68fc1b61" />
+
 ---
 
 # 🚀 Technologies Used
@@ -457,43 +459,72 @@ Metrics monitored:
 
 ## EKS Cluster
 
-![EKS Cluster](screenshots/eks-cluster.png)
+<img width="1046" height="223" alt="Screenshot 2026-05-07 173054" src="https://github.com/user-attachments/assets/6b548abd-b240-43e7-9e51-7565946337b4" />
 
 ---
 
 ## Monitoring Pods
 
-![Monitoring Pods](screenshots/monitoring-pods.png)
+<img width="1068" height="241" alt="Screenshot 2026-05-07 201106" src="https://github.com/user-attachments/assets/87131998-c344-49ee-8255-341967c86bdc" />
+
 
 ---
 
 ## Prometheus Targets
 
-![Prometheus Targets](screenshots/prometheus-targets.png)
+
 
 ---
 
 ## Prometheus Alerts
 
-![Prometheus Alerts](screenshots/prometheus-alerts.png)
+<img width="1900" height="860" alt="Screenshot 2026-05-07 180133" src="https://github.com/user-attachments/assets/3b0dc9a4-1d66-4858-9239-008a119435f3" />
+
+<img width="1906" height="871" alt="Screenshot 2026-05-07 180902" src="https://github.com/user-attachments/assets/802bd2f6-8cd8-45e7-806a-606c4ece3900" />
+
+<img width="1897" height="863" alt="Screenshot 2026-05-07 185329" src="https://github.com/user-attachments/assets/9821acfe-57cd-4bfb-bf34-c4fa80bb4adc" />
+
+<img width="1918" height="873" alt="Screenshot 2026-05-07 192833" src="https://github.com/user-attachments/assets/c4fb05ce-6e1d-477f-bc96-a2aec59f810e" />
+
+<img width="1908" height="875" alt="Screenshot 2026-05-07 201748" src="https://github.com/user-attachments/assets/7150e96a-9ca1-474a-a012-1eb431fcac15" />
+
+<img width="1883" height="416" alt="Screenshot 2026-05-07 201844" src="https://github.com/user-attachments/assets/e5f5974e-a06d-4e65-b167-01ad30e9dea6" />
 
 ---
 
 ## Grafana Dashboard
 
-![Grafana Dashboard](screenshots/grafana-dashboard.png)
+<img width="855" height="709" alt="Screenshot 2026-05-07 174013" src="https://github.com/user-attachments/assets/9c6b4720-fcb6-4955-bd2c-5821daa597ba" />
+
+<img width="1892" height="853" alt="Screenshot 2026-05-07 202353" src="https://github.com/user-attachments/assets/2168c3a6-b3d4-40a2-b286-da83ed059759" />
+
+<img width="1915" height="861" alt="Screenshot 2026-05-07 174948" src="https://github.com/user-attachments/assets/054e65b0-c848-4d38-aae1-64f97efa4109" />
+
+<img width="1909" height="879" alt="Screenshot 2026-05-07 175003" src="https://github.com/user-attachments/assets/10014bc3-c906-45e1-b0f0-9dcd6ceda9e4" />
+
+<img width="1901" height="856" alt="Screenshot 2026-05-07 175122" src="https://github.com/user-attachments/assets/0ec3b0f8-c414-4163-8bb4-b7a420020050" />
+
+<img width="1918" height="870" alt="Screenshot 2026-05-07 175133" src="https://github.com/user-attachments/assets/7637adf8-a07f-49da-8f9b-59d79601d642" />
+
+<img width="1917" height="860" alt="Screenshot 2026-05-07 175320" src="https://github.com/user-attachments/assets/cafa5c26-9ba0-4b49-8315-420dfcd4c5a3" />
+
+
 
 ---
 
 ## Slack Alerts
 
-![Slack Alerts](screenshots/slack-alerts.png)
+<img width="1912" height="798" alt="Screenshot 2026-05-07 192746" src="https://github.com/user-attachments/assets/ca70348f-0aa6-4a9f-ac2e-c53d8722ba32" />
+
+<img width="1898" height="862" alt="Screenshot 2026-05-07 182354" src="https://github.com/user-attachments/assets/0cfabe18-aae3-4a6b-9a18-bfb5c3aa227e" />
+
+<img width="936" height="767" alt="Screenshot 2026-05-07 192758" src="https://github.com/user-attachments/assets/29dc1674-fe63-4a20-8d1b-bcf5d9d75b15" />
 
 ---
 
 # 📌 Repository Structure
 
-```text id="tj7xqy"
+```
 Project-6-Prometheus-Grafana-Monitoring/
 │
 ├── helm/
